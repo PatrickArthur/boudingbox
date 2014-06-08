@@ -1,43 +1,43 @@
 class BoundingBox
 
-def initialize(x1,x2,y1,y2)
-  @x1=x1
-  @x2=x2
-  @y1=y1
-  @y2=y2
+def initialize(x,y,w,h)
+  @x=x
+  @y=y
+  @w=w
+  @h=h
 end
 
 
 def width
-  @y1
+  @w
 end
 
 def height
-  @y2
+  @h
 end
 
 def left
-  @x1
+  @x
 end
 
 def right
-  @x1+@y1
+  @x+@w
 end
 
 def top
-  @x2+@y2
+  @y+@h
 end
 
 def bottom
-  @x2
+  @y
 end
 
-def contains_point?
-  # if x1>=left and x<=right and y>=bottom and y>=top
-  #   true
-  # else
-  #   false
-  # end
+def contains_point?(x,y)
+  if x>=left && x<=right && y>=bottom && y<=top
+    true
+  else
+    false
+  end
 end
 
 end
